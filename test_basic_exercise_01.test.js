@@ -9,7 +9,7 @@ import {
   countLinuxUsers,
   getMeanScore,
   simpleFizzBuzz,
-} from "../challenges/exercise001";
+} from "../exercise001";
 
 describe("capitalize", () => {
   test("returns a capitalized string", () => {
