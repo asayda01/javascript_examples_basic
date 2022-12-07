@@ -42,7 +42,6 @@ export function findSentencesContaining(sentences, str) {
 
   // for case sensitive searches
   //return sentences.filter( x => {return x.includes(str) }); 
-  
 }
 
 export function getLongestSides(triangles) {
