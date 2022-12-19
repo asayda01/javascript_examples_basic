@@ -27,6 +27,13 @@ export function getSalePrice(originalPrice, reduction) {
 
 export function getMiddleCharacter(str) {
   if (str === undefined) throw new Error("str is required");
+
+  /*
+
+  return str.length % 2 ? str.charAt(str.length / 2) :
+   str.charAt((str.length / 2)-1) + str.charAt((str.length / 2)) ;
+
+  */
   return str.substr(Math.ceil(str.length / 2 - 1), str.length % 2 === 0 ? 2 : 1);
 }
 
@@ -37,14 +44,28 @@ export function reverseWord(word) {
 
 export function reverseAllWords(words) {
   if (words === undefined) throw new Error("words is required");
+  
+  /*
+
   for(let idx in words) { 
-    words[idx] = words[idx].split('').reverse().join('');
-}
+    words[idx] = words[idx].split('').reverse().join('')};
   return words;          // could be improved * 
+
+  */
+  return words.map(x => {return x.split('').reverse().join('')} );
 }
 
 export function countLinuxUsers(users) {
   if (users === undefined) throw new Error("users is required");
+
+  /*
+
+  let counter = 0
+  users.map(element => {element.type === "Linux" ? ++counter : counter})
+  return counter;
+
+  */
+
   return users.filter(users => users.type === "Linux").length;
 }
 
