@@ -6,7 +6,9 @@ export function findSmallNums(nums) {
 export function findNamesBeginningWith(names, char) {
   if (!names) throw new Error("names is required");
   if (!char) throw new Error("char is required");
+  
   //return names.filter(x => {return x.charAt(0) == char});
+  
   return   names.filter(x => {return x.charAt(0) === char});
 }
 
@@ -86,7 +88,7 @@ export function getLongestSides(triangles) {
   if (!triangles) throw new Error("triangles is required");
 
   /*
-  
+
   return triangles.map(x => 
   { return x.reduce (     (a,b) => { return Math.max(a,b) }    )        }
   );
