@@ -94,5 +94,6 @@ export function getLongestSides(triangles) {
   );
 
   */
+ 
   return triangles.map( x => {return Math.max.apply(Math, x) } );
 }

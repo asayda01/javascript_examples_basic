@@ -1,6 +1,16 @@
 export const findNextNumber = (nums, n) => {
   if (nums === undefined) throw new Error("nums is required");
   if (n === undefined) throw new Error("n is required");
+
+  /*
+  
+  let index_1 = nums.indexOf(n,0);
+  if ( (index_1 > -1) && (index_1+1 !== nums.length) ) {
+    return nums[index_1+1] } ;
+  return null;
+
+  */
+
   if ( (nums.indexOf(n) ) >= 0 && (nums.indexOf(n)) <= nums.length -2){
     return nums[ (nums.indexOf(n)) +1]};
   return null;
@@ -8,6 +18,22 @@ export const findNextNumber = (nums, n) => {
 
 export const count1sand0s = (str) => {
   if (str === undefined) throw new Error("str is required");
+
+  /*
+  
+  //let arr1 = str.split("");
+  let arr1 = Array.from(str);
+  let count_0 = 0;
+  let count_1 = 0;
+  
+  for (let i = 0; i < arr1.length; ++i) {
+    if ( arr1[i] === '0' ) { count_0 += 1};
+    if ( arr1[i] === '1' ) { count_1 += 1};
+  }
+  return {0 : count_0 , 1 : count_1 };
+
+  */
+
   let count_1 = 0, count_0 = 0, obj_1 = {};
   if (str.includes("1") === true ) {count_1 = str.match(/1/g).length};
   if (str.includes("0") === true ) {count_0 = str.match(/0/g).length};
@@ -23,8 +49,12 @@ export const reverseNumber = (n) => {
 
 export const sumArrays = (arrs) => {
   if (arrs === undefined) throw new Error("arrs is required");
+  
   let sum_of_arrs = arrs.map(x =>  {return x.reduce((a, b) => a + b, 0)});
   return sum_of_arrs.reduce((k,m)=> k+m,0);
+  
+  // return (arrs.map(x => {return x.reduce( (a,b) => a+b,0 )})).reduce( (a,b) => a+b,0 );
+
 };
 
 export const arrShift = (arr) => {
