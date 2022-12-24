@@ -4,6 +4,7 @@
  * @param {Array} arr
  * @returns {Number}
  */
+
 export function sumMultiples (arr) {
   if (arr === undefined) throw new Error("arr is required");
 
@@ -56,6 +57,7 @@ export function sumMultiples (arr) {
  * @param {String} str
  * @returns {Boolean}
  */
+
 export function isValidDNA (str) {
   if (str === undefined) throw new Error("str is required");
 
@@ -87,6 +89,7 @@ export function isValidDNA (str) {
  * @param {String} str
  * @returns {String}
  */
+
 export function getComplementaryDNA (str) {
   if (str === undefined) throw new Error("str is required");
 
@@ -132,6 +135,7 @@ export function getComplementaryDNA (str) {
  * @param {Number} n
  * @returns {Boolean}
  */
+
 export function isItPrime (n) {
   if (n === undefined) throw new Error("n is required");
   if (n <= 1) return false;    // negative numbers, 0 and 1 are not prime numbers.
@@ -155,6 +159,7 @@ export function isItPrime (n) {
  * @param {Any} fill
  * @returns {Array}
  */
+
 export function createMatrix (n, fill) {
   if (n === undefined) throw new Error("n is required");
   if (fill === undefined) throw new Error("fill is required");
@@ -214,9 +219,22 @@ export function createMatrix (n, fill) {
  * @param {String} day
  * @returns {Boolean}
  */
+
 export const areWeCovered = (staff, day) => {
   if (staff === undefined) throw new Error("staff is required");
   if (day === undefined) throw new Error("day is required");
+
+  /*
+
+  let arr1 = [];
+  for (let i of staff) 
+  {
+    if(String(i.rota).includes(day) === true) {arr1.push(i.name)}
+  };
+  return arr1.length>=3;
+
+  */
+
   return (Object.keys(staff).map(x=> 
     {return String(staff[x].rota).includes(day)})).length >=3 ;
 };
